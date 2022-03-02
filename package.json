@@ -1,5 +1,5 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "proshop-turbo",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -10,6 +10,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {

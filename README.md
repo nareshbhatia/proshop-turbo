@@ -1,77 +1,58 @@
-# Turborepo starter with NPM
+# ProShop Turbo
 
-This is an official starter turborepo.
+A sample eCommerce app to show best practices in web development using
+Turborepo.
 
-## What's inside?
+![Home Page](assets/screenshot-home.png)
 
-This turborepo uses [NPM](https://www.npmjs.com/) as a package manager. It includes the following packages/apps:
+## Tech Stack
 
-### Apps and Packages
+- [Turborepo](https://turborepo.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [GraphQL](https://graphql.org/)
+- [Apollo GraphQL](https://www.apollographql.com/)
+- [Material UI](https://mui.com/)
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+## Architecture
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+The ProShop app consists of two micro-frontends which are separate web apps
+deployed at two different ports:
 
-### Utilities
+1. Catalog App: Displays the product catalog and allows the user to add products
+   to the cart.
+2. Cart App: Displays the cart and allows the user to manage it, i.e. add,
+   delete and update items). Once the user is happy with the cart, they can
+   place an order. (Note that this is a very simplified checkout process - there
+   is no provision for collecting shipping and/or payment information.)
 
-This turborepo has some additional tools already setup for you:
+- Both micro-frontends talk to a GraphQL API called the `proshop-api`.
+- Both micro-frontends share a common UI library called `ui`.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-## Setup
-
-This repository is used in the `npx create-turbo@latest` command, and selected when choosing which package manager you wish to use with your monorepo (NPM).
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-npm run build
-```
-
-### Develop
+## Development Build
 
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+npm install
 npm run dev
 ```
 
-### Remote Caching
+Open two browser windows and point them to the following URLs:
 
-Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+1. http://localhost:3000/: Catalog app home page.
+2. http://localhost:3001/: Cart app home page.
 
-By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+> Note: Do not run `npm install` in any of the subdirectories. It will break the
+> build. There should be only one `package-lock.json` file in the entire repo
+> (at the root).
 
-```
-cd my-turborepo
-npx turbo login
-```
+## Production Build
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+To build all apps and packages, run the following command:
 
 ```
-npx turbo link
+npm install
+npm run build
 ```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Pipelines](https://turborepo.org/docs/features/pipelines)
-- [Caching](https://turborepo.org/docs/features/caching)
-- [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/features/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
