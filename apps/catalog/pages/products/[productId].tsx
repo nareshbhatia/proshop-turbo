@@ -1,32 +1,27 @@
 import * as React from 'react';
 import { gql } from '@apollo/client';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { Category } from 'proshop-models';
+import { Product } from 'proshop-models';
 import { Header } from 'ui';
-import { CategoryList } from '../components/CategoryList';
-import { ProductCarousel } from '../components/ProductCarousel';
-import { apolloClient } from '../graphql/apolloClient';
+import { ProductDetail } from '../../components/ProductDetail';
+import { apolloClient } from '../../graphql/apolloClient';
 
-interface HomePageProps {
-  categories: Array<Category>;
+interface ProductPageProps {
+  product: Product;
 }
 
-export default function HomePage({ categories }: HomePageProps) {
+export default function ProductPage({ product }: ProductPageProps) {
   return (
     <React.Fragment>
       <Header />
-      <Container maxWidth="xl">
-        <Box sx={{ my: 2 }}>
-          <ProductCarousel />
-          <CategoryList categories={categories} />
-        </Box>
+      <Container maxWidth="xl" sx={{ mt: 4 }}>
+        <ProductDetail product={product} />
       </Container>
     </React.Fragment>
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ params }) {
   // From https://nextjs.org/docs/basic-features/data-fetching:
   //
   // You should not use fetch() to call an API route in getServerSideProps.
@@ -37,19 +32,25 @@ export async function getServerSideProps() {
 
   const { data } = await apolloClient.query({
     query: gql`
-      query GetCategories {
-        categories {
+      query GetProduct($productId: ID!) {
+        product(productId: $productId) {
           id
-          title
+          name
+          description
+          manufacturer
           photo
+          price
         }
       }
     `,
+    variables: {
+      productId: params?.productId,
+    },
   });
 
   return {
     props: {
-      categories: data.categories,
+      product: data.product,
     },
   };
 }
