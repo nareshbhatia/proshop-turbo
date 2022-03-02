@@ -1,0 +1,62 @@
+[
+  {
+    "id": "clothing",
+    "title": "Clothing",
+    "photo": "https://images.unsplash.com/photo-1619473792839-1d3b0355a7c8?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "shoes",
+    "title": "Shoes",
+    "photo": "https://images.unsplash.com/photo-1531310197839-ccf54634509e?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "jewelry",
+    "title": "Jewelry",
+    "photo": "https://images.unsplash.com/photo-1620656798579-1984d9e87df7?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "watches",
+    "title": "Watches",
+    "photo": "https://images.unsplash.com/photo-1451290173668-9a14beaf714c?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "electronics",
+    "title": "Electronics",
+    "photo": "https://images.unsplash.com/photo-1588459460688-561668329db5?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "music",
+    "title": "Music",
+    "photo": "https://images.unsplash.com/photo-1458560871784-56d23406c091?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "games",
+    "title": "Games",
+    "photo": "https://images.unsplash.com/photo-1635372730136-06b29022281c?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "sports",
+    "title": "Sports",
+    "photo": "https://images.unsplash.com/photo-1526888935184-a82d2a4b7e67?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "books",
+    "title": "Books",
+    "photo": "https://images.unsplash.com/photo-1525972385596-02ad3049150b?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "luggage",
+    "title": "Luggage",
+    "photo": "https://images.unsplash.com/photo-1581364101929-bd09d423e738?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "toys",
+    "title": "Toys",
+    "photo": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=800&h=450&fit=crop&crop=entropy"
+  },
+  {
+    "id": "groceries",
+    "title": "Groceries",
+    "photo": "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&h=450&fit=crop&crop=entropy"
+  }
+]
