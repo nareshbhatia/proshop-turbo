@@ -32,7 +32,29 @@ deployed at two different ports:
 
 ## Development Build
 
-To develop all apps and packages, run the following command:
+Clone a fresh copy of the repo:
+
+```sh
+git clone https://github.com/nareshbhatia/proshop-turbo.git
+cd proshop-turbo
+```
+
+Create environment variables for local development:
+
+1. Create a file called `.env.local` under `/apps/catalog` and add the following
+   variable to it.
+
+```
+NEXT_PUBLIC_API_URL=http://localhost:8080
+```
+
+2. Create another file called `.env.local` under `/apps/cart` and add the same
+   variable to it as above. (The two files should be identical.)
+
+> Note: These environment files should not be checked into git. They are already
+> added to .gitignore.
+
+Now follow the steps below:
 
 ```
 npm install
