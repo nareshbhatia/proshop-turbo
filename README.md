@@ -63,8 +63,8 @@ npm run dev
 
 Open two browser windows and point them to the following URLs:
 
-1. http://localhost:3000/: Catalog app home page.
-2. http://localhost:3001/: Cart app home page.
+1. http://localhost:3001/: Catalog app home page
+2. http://localhost:3002/: Cart app home page
 
 > Note: Do not run `npm install` in any of the subdirectories. It will break the
 > build. There should be only one `package-lock.json` file in the entire repo

@@ -4,8 +4,6 @@ import { ApolloServer } from 'apollo-server';
 import { dataSources } from './datasources';
 import { resolvers } from './resolvers';
 
-const port = parseInt(process.env.API_PORT || '8080', 10);
-
 async function startApolloServer() {
   // read the schema (convert the file Buffer to a UTF-8 string)
   const typeDefs = readFileSync(
@@ -14,7 +12,7 @@ async function startApolloServer() {
 
   // start apollo server
   const server = new ApolloServer({ typeDefs, resolvers, dataSources });
-  const { url } = await server.listen({ port });
+  const { url } = await server.listen({ port: process.env.API_PORT });
 
   console.log(`ProShop API ready at ${url}`);
 }
